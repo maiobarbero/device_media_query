@@ -1,0 +1,42 @@
+@mixin device($operator1, $value1, $operator2: null, $value2: null) {
+  $conditions: ();
+  $query: '';
+
+  @if $operator1 == '>' {
+    $conditions: append($conditions, (min-width: $value1 + 1), 'comma');
+  }
+  @else if $operator1 == '>=' {
+    $conditions: append($conditions, (min-width: $value1), 'comma');
+  }
+  @else if $operator1 == '<' {
+    $conditions: append($conditions, (max-width: $value1 - 1), 'comma');
+  }
+  @else if $operator1 == '<=' {
+    $conditions: append($conditions, (max-width: $value1), 'comma');
+  }
+
+
+  @if $operator2 != null and $value2 != null {
+    @if $operator2 == '>' {
+      $conditions: append($conditions, (min-width: $value2 + 1), 'comma');
+    }
+    @else if $operator2 == '>=' {
+      $conditions: append($conditions, (min-width: $value2), 'comma');
+    }
+    @else if $operator2 == '<' {
+      $conditions: append($conditions, (max-width: $value2 - 1), 'comma');
+    }
+    @else if $operator2 == '<=' {
+      $conditions: append($conditions, (max-width: $value2), 'comma');
+    }
+  }
+
+  @each $condition in $conditions {
+    // Check if $query is empry. If it's so it's not the start of the line
+    $query: $query + if($query != '', ' and ', '') + inspect($condition);
+  }
+
+  @media #{$query} {
+    @content;
+  }
+}

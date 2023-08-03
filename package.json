@@ -1,0 +1,9 @@
+{
+  "name": "device_media_query",
+  "version": "1.0.0",
+  "description": "A Sass mixin library that allows for defining media queries for various devices with logical operators.",
+  "keywords": ["scss", "mixin", "media query", "css"],
+  "author": "Matteo Barbero",
+  "license": "GPL-3.0-or-later",
+  "files": ["src/"]
+}
