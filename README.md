@@ -31,10 +31,10 @@ $phone: 500px; // Your custom value
 
 You can use the following logical operators with the device mixin:
 
-- > : greater than
-- >= : greater than or equal to
-- < : less than
-- <= : less than or equal to
+- `>` : greater than
+- `>=` : greater than or equal to
+- `<` : less than
+- `<=` : less than or equal to
 
 ## How to Install from Git
 
