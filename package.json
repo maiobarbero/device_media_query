@@ -5,5 +5,8 @@
   "keywords": ["scss", "mixin", "media query", "css"],
   "author": "Matteo Barbero",
   "license": "GPL-3.0-or-later",
-  "files": ["src/"]
+  "files": ["src/"],
+  "repository": {
+    "type":"git",
+    "url":"https://github.com/maiobarbero/device_media_query"}
 }
